@@ -1,0 +1,87 @@
+<!--style>
+		.container i {
+			color: lightblue;
+		    margin-left: -30px;
+		    cursor: pointer;
+		}
+		
+		h2, h3, h4 {
+			color: #2B547E;
+			font-family: Verdana;
+			font-size: 15px;
+		}
+		
+		body {
+			background-color: #BCC6CC;
+		}
+	</style-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="com.utes.cert.crypto/public/css/pha_styles001.css"  type="text/css">
+</head>
+<body>
+<h2> Home Page For Cyber Security & PKI Cert Generation<br><br>
+Background: </h2>
+<h3>
+
+Public key cryptography helps make information and communication technology (ICT) systems more <br>
+secure. Public key infrastructures (PKIs) enable the use of public key cryptography in open <br>
+computer networks, in particular on the Internet.<br>
+
+Cryptography has provided us with digital signatures that resemble in functionality the <br>
+hand–written signatures and digital certificates that relate to an ID card or some <br>
+other official document. However, in order to use these technologies, we need to make the <br>
+necessary provisions so that their usage is equally transparent and secure. The Public <br>
+Key Infrastructures along with the Priviledge Management Infrastructure are candidates <br>
+to aid this transparency and security of applications of the Internet<br><br>
+
+Use of cryptographic algorithm, a technique that would transform her message into an<br>
+encrypted form, unreadable except by those for whom it is intended. When encrypted, the message<br>
+can only be interpreted through the use of the corresponding secret key. Without the key the message<br>
+is useless: good cryptographic algorithms make it so difficult for intruders to decode the original text<br>
+that it isn’t worth their effort.<br><br>
+There are two categories of cryptographic algorithms: conventional and public key.<br>
+Conventional cryptography, also known as symmetric cryptography, requires that the sender and<br>
+receiver share a key: a secret piece of information that is used to encrypt or decrypt a message. If<br>
+this key is secret, then nobody other than the sender or receiver can read the message. If Alice and<br>
+the bank each has a secret key, then they may send each other private messages. The task of privately<br>
+choosing a key before communicating, however, can be problematic.<br><br>
+Public key cryptography, also known as asymmetric cryptography, solves the key exchange problem <br>
+by defining an algorithm which uses two keys, each of which can be used to encrypt a message. If<br>
+one key is used to encrypt a message, then the other must be used to decrypt it. This makes it possible<br>
+to receive secure messages by simply publishing one key (the public key) and keeping the other secret<br>
+(the private key)<br><br>
+
+In a cryptographic process each party has a certificate which validates the other’s identity, <br>
+confirms the public key, and is signed by a trusted agency, then they both are assured <br>
+that they are communicating with whom they think they are. Each party uses the public <br>
+key of the trusted agency to verify the certificate of the other party and subsequently <br>
+to ensure the authenticity of the users’ public key.<br><br>
+
+The trusted agency that signs Certificates with its private key and lets others verify Certificates by<br>
+the usage of the corresponding public key is called a Certification Authority, or CA. This Certification<br>
+Authority is also known as a Trusted Third Party (TTP), since it is regarded that, in order to be trusted,<br>
+it should not have common interests with any of the two parties.<br><br>
+
+This application takes one to go through a process where it starts to show how a clients domain certificate <br>
+is created. To go through the process, first register with a client id and pass word. This credential <br>
+enables you to login to the app. Then the rest of the fields are to create the domain certificate.<br>
+The certificate is only as test certificate and can not be used in a productive environment.<br><br>
+</h3>
+<p><ul>
+  <li><a href="/login_client">Login with Client Id</a></li>
+  <li><a href="/register_client">Register A new client</a></li>
+  <li><a href="/client_secureEnv">create client secure envelop </a></li>
+  <li><a href="/logout">Logout</a></li>
+</ul></p>
+	<form action="https://phadnis.no/client_start" method="POST" >
+		<div>
+		    <label id="clientPw" name="clientPw" style="color:red"><%= newenvVals.clientPw %></label>
+		</div>
+	</form>
+</body>
+</html>

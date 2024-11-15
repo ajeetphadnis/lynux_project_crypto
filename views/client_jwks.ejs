@@ -1,0 +1,59 @@
+<!--style>
+		.container i {
+			color: lightblue;
+		    margin-left: -30px;
+		    cursor: pointer;
+		}
+		
+		h2, h3, h4 {
+			color: #2B547E;
+			font-family: Verdana;
+			font-size: 15px;
+		}
+		
+		body {
+			background-color: #BCC6CC;
+		}
+	</style-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://192.168.1.4:30005/css/pha_styles001.css"  type="text/css">
+</head>
+<body>
+<h2> Home Page For Cyber Security & PKI Cert Generation<br><br>
+Background: </h2>
+<h3>
+
+Java Token KeySets Store<br>
+
+
+</h3>
+<form action="/jwks" method="post" enctype="multipart/form-data">
+	<div><h3>
+			JWKS Store:
+		</h3>
+		<div>
+			X509-KeySet&nbsp;&nbsp;&nbsp;&nbsp;: <textarea id="xks" name="xks" cols="50" rows="10" style="margin: 0px; width: 522px; height: 111px;"><%= ksVals.xks %></textarea> 
+		</div>
+		<div>
+			Standard-KeySet: <textarea id="stdks" name="stdks" cols="50" rows="10" style="margin: 0px; width: 522px; height: 111px;"><%= ksVals.stdks %></textarea> 
+		</div>
+		
+	</div>
+	<input type="submit" />
+</form>
+<p><ul>
+  <li><a href="https://192.168.1.4:30005/login_client">Login with Client Id</a></li>
+  <li><a href="https://192.168.1.4:30005/register_client">Register A new client</a></li>
+  <li><a href="https://192.168.1.4:30005/client_secureEnv">create client secure envelop </a></li>
+  <li><a href="https://192.168.1.4:30005/ocsp">create ocsp </a></li>
+  <li><a href="https://192.168.1.4:30005/jwks">create keysets </a></li>
+  <li><a href="https://192.168.1.4:30005/jwt">create jw tokens </a></li>
+  <li><a href="https://192.168.1.4:30005/logout">Logout</a></li>
+</ul></p>
+</body>
+</html>

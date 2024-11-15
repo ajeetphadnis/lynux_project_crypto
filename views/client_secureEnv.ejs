@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Envelop App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet"
+		href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		.input-icons i {
+			color: lightblue;
+		    margin-left: -30px;
+		    cursor: pointer;
+		}
+		
+		h2, h3, h4 {
+			color: #2B547E;
+			font-family: Verdana;
+			font-size: 15px;
+		}
+		
+		
+		body {
+			background-color: #BCC6CC;
+		}
+	</style>
+</head>
+<script>
+		toggleEye = function(  ) {
+	  		const togglePassword = document.querySelector('#togglePassword');
+			const password = document.querySelector('#clientPw');
+			togglePassword.addEventListener('click', function (e) {
+		    // toggle the type attribute
+		    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+		    password.setAttribute('type', type);
+		    // toggle the eye slash icon
+		    this.classList.toggle('fa-eye-slash');
+			});
+		}
+	</script>
+<body>
+<h2> A new era for European payments </h2>
+<h3>
+The Single Euro Payments Area (SEPA) is the largest payments initiative ever <br>
+undertaken in European Union (EU), currently covering the 36 European <br>
+countries: the 27 EU Member states (incl. several territories belonging <br>
+to these countries) plus Andorra, Iceland, Monaco, Norway, Liechtenstein, <br>
+San Marino, Switzerland, the United Kingdom and the Vatican City State.<br>
+
+The initiative is driven by the European Payments Council and the aim of <br>
+SEPA is to harmonise electronic euro payments in Europe and thereby to <br>
+enable companies, public authorities and individuals to issue and receive <br>
+payments within countries of the SEPA zone faster, safer and in a more <br>
+efficient way.  This is achieved upon an agreement on a common set of <br>
+data (ISO 20022 XML message standard), maximum value days, transparency <br>
+of charged fees etc. <br>
+
+There are four different euro payment schemes:<br>
+SEPA Credit Transfer (SCT)<br>
+SCT is an electronic payment from one bank account to another. SCTs can <br>
+be one-off or recurring payments (for example, a standing order to pay <br>
+the monthly rent of an apartment or to regularly transfer money to a <br>
+savings account). Likewise, single or bulk payments (such as one debit <br>
+from the payer’s account with multiple credits to different beneficiaries) <br>
+are supported. The deadline for SCT in the euro area was 1st of February, <br>
+2014 and for non-euro area the 31st of October, 2016. As of these dates, <br>
+the existing national euro credit transfer schemes have been replaced by SCT.<br>
+
+
+SEPA Direct Debit (SDD) and B2B<br>
+SDD consists of two services- CORE and B2B. Main target market for Core <br>
+scheme is retail and private customers, whereas B2B scheme is targeting <br>
+direct debits between corporates. The main difference between the two <br>
+services is primarily related to debtor's refund rights, technically the <br>
+two services are based on the same formats. The deadline for the two SDD <br>
+schemes in the euro area was 1st of February, 2014 and for non-euro area <br>
+the 31st of October, 2016. As of these dates, the existing national euro <br>
+direct debit schemes have been replaced by SDD.<br>
+
+
+SEPA Instant Credit Transfer (SCT Inst)<br>
+The SEPA Instant Credit Transfer (SCT Inst) scheme, which officially was <br>
+launched in November 2017, enables euro credit transfers with the funds <br>
+made available on the account in less than ten seconds at any time and in <br>
+an area that will progressively span over the 34 SEPA countries. All payment <br>
+service providers (PSP) are invited to adhere to the scheme as soon as possible, <br>
+however this is not a compulsory scheme.<br>
+
+ 
+
+Technical implementation of SEPA Direct Debit Service<br>
+This resource area is designed to provide ERP vendors and IT <br>
+staff with the necessary information and tools to support the implementation <br>
+and use of SEPA Direct Debit Service. <br>
+
+Below you will find information such as service description, <br>
+implementation guide and test tool. <br>
+
+Service overview<br>
+SEPA Direct Debit Service Description (pdf, 334 KB)<br>
+SEPA Direct Debit Service Mandate Creditor  (pdf, 235 KB)<br>
+Mandate B2B template (pdf, 124 KB)<br>
+Mandate CORE template (pdf, 124 KB)<br>
+</h3>
+    <div style="margin-left:50px;" class="container">
+        <h2>Creating Client Secure Envelop  </h2>
+
+        <% if(typeof alert != 'undefined') { %>
+            <% alert.forEach(function(error) { %>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <%= error.msg %>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                  </div>
+            <% }) %>
+        <% } %>
+        <form action="/client_secureEnv" method="POST" enctype="multipart/form-data">
+			 <div style="max-width:200px;margin:auto">
+			        <div class="input-icons">
+			        	<input type="text" id="CustomerId" name="CustomerId" required value="<%= newenvVals.CustomerId %>" placeholder="CustomerId" >
+						<input type="text" id="TargetId" name="TargetId" required value="<%= newenvVals.TargetId %>"  placeholder="TargetId" >
+						<input type="text" id="FileType" name="FileType" required placeholder="FileType">
+			            <i class="fa fa-user icon"></i>			            
+			            <input type="file" id="Content" name="Content" required placeholder="Content">
+			            <i class="fa fa-envelope icon"></i>
+					</div>
+					<div>
+			            <!-- i class="fa fa-instagram icon"></i>
+			            <input class="input-field" type="text">			            
+			            <i class="fa fa-youtube icon"></i>
+			            <input class="input-field" type="text">
+			            <i class="fa fa-facebook icon"></i>
+			            <input class="input-field" type="text" -->
+			        </div>
+			        <button type="submit" class="btn btn-primary">Submit</button>
+			        <div>
+			        SignedXml		: <textarea id="sxml" name="sxml" cols="50" rows="10" style="margin: 0px; width: 522px; height: 111px;"><%= newenvVals.signedXml %></textarea> 
+			        </div>
+			  </div>
+        </form>
+        <div>
+        	<ul>
+    			<li><a href="https://192.168.1.4:30005/client_start">Client-process-Start</a></li>
+    			<li><a href="https://192.168.1.4:30005/login_client">login</a></li>
+			</ul>
+        </div>
+
+    </div>
+</body>
+</html>

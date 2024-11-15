@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet"
+		href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		.input-icons i {
+			color: lightblue;
+		    margin-left: -30px;
+		    cursor: pointer;
+		}
+		
+		h2 {
+			color: green;
+		}
+		
+		
+		body {
+			background-color: #BCC6CC;
+		}
+	</style>
+</head>
+<script>
+		toggleEye = function(  ) {
+	  		const togglePassword = document.querySelector('#togglePassword');
+			const password = document.querySelector('#clientPw');
+			togglePassword.addEventListener('click', function (e) {
+		    // toggle the type attribute
+		    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+		    password.setAttribute('type', type);
+		    // toggle the eye slash icon
+		    this.classList.toggle('fa-eye-slash');
+			});
+		}
+	</script>
+<body>
+    <div style="margin-left:50px;" class="container">
+        <h3>Register Client </h3>
+
+        <% if(typeof alert != 'undefined') { %>
+            <% alert.forEach(function(error) { %>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <%= error.msg %>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                  </div>
+            <% }) %>
+        <% } %>
+        <form action="/register_client" method="POST" >
+			 <div style="max-width:200px;margin:auto">
+			        <div class="input-icons">
+			        	<input type="text" id="clientId" name="clientId" required placeholder="Client Identification">
+			            <i class="fa fa-user icon"></i>			            
+			            <div class="input-icons">
+						<input  type="password" name="clientPw" id="clientPw" placeholder="Password">
+						<i class="fa fa-eye icon" id="togglePassword" name="togglePassword" onClick="toggleEye()"></i>
+						<input type="password" name="password1" id="password1" placeholder="Confirm Password">
+						<i class="fa fa-eye icon"></i>
+						<input type="text" id="commonName" name="commonName" required placeholder="Common Name">
+			            <i class="fa fa-user icon"></i>			            
+			            <input type="text" id="countryName" name="countryName" required placeholder="Country Name like NO">
+			            <i class="fa fa-envelope icon"></i>
+						<div class="input-icons">
+			                <input type="text" id="ST" name="ST" required placeholder="Local Name">
+			                <i class="fa fa-id-card icon"></i>
+			            </div>
+			            <div class="input-icons">
+			                <input type="text" id="localityName" name="localityName" required placeholder="City Name">
+			                <i class="fa fa-id-card icon"></i>
+			            </div>
+			            <div class="input-icons">
+			                <input type="text" name="organizationName" id="organizationName" required placeholder="Organization Name">
+			                <i class="fa fa-mobile-phone icon"></i>
+			            </div>
+			            <div class="input-icons">
+			                <input type="text" name="OU" id="OU" required placeholder="Organisation Unit">
+			                <i class="fa fa-group icon"></i>
+			            </div>
+			            <div class="input-icons">
+			               	<input type="text" id="keySize" name="keySize" required placeholder="One of: 1024 or 2048">
+			               	<i class="fa fa-id-card icon"></i>
+			            </div>
+			            <div class="input-icons">
+			                <input type="text" name="passphrase" id="passphrase" required placeholder="Pass Phrase">
+			                <i class="fa fa-mobile-phone icon"></i>
+			            </div>
+			            <div class="input-icons">
+			                <input type="text" name="p12FileName" id="p12FileName" required placeholder="P12 File Name">
+			                <i class="fa fa-group icon"></i>
+			            </div>															
+					</div>
+			            <!-- i class="fa fa-instagram icon"></i>
+			            <input class="input-field" type="text">			            
+			            <i class="fa fa-youtube icon"></i>
+			            <input class="input-field" type="text">
+			            <i class="fa fa-facebook icon"></i>
+			            <input class="input-field" type="text" -->
+			        </div>
+			        <button type="submit" class="btn btn-primary">Submit</button>
+			  </div>
+        </form>
+        <div>
+        	<ul>
+    			<li><a href="/client_start">Client-process-Start</a></li>
+    			<li><a href="/login_client">login</a></li>
+			</ul>
+        </div>
+
+    </div>
+</body>
+</html>

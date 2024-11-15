@@ -1,0 +1,95 @@
+<!--style>
+		.container i {
+			color: lightblue;
+		    margin-left: -30px;
+		    cursor: pointer;
+		}
+		
+		h2, h3, h4 {
+			color: #2B547E;
+			font-family: Verdana;
+			font-size: 15px;
+		}
+		
+		body {
+			background-color: #BCC6CC;
+		}
+	</style-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/css/pha_styles001.css"  type="text/css">
+</head>
+<body>
+<h2> Home Page For Cyber Security & PKI Cert Generation<br><br>
+Background: </h2>
+<h3>
+
+OCSP<br>
+Due to the shortcomings of CRLs, the online certificate status protocol OCSP <br>
+(Online Certificate Status Protocol, RFC 6960) came into being. <br>
+When the browser attempts to access an HTTPS site, the browser extracts the URI <br>
+of the OCSP server (the server that CA uses to process ocsp requests, also <br>
+called OCSP Responser) from the certificate, and sends a request carrying <br>
+the serial number of the certificate to the OCSP server , The OCSP server <br>
+returns a response with the status of the target certificate. There are three <br>
+types of certificate status: good, revoked, and unknown. <br>
+The browser will know the status of the certificate and take follow-up actions. <br>
+In addition, the response of the OCSP server will also be signed to prevent tampering.<br>
+
+OCSP implements real-time query and requires less network bandwidth, and the <br>
+client's resolution overhead is much smaller than CRLs. But it has the following problems:<br>
+Each client sends an OCSP request for the certificate independently, and the OCSP server <br>
+has a heavy load.<br>
+Violating the privacy of the client, the OCSP server knows which sites the user visited.<br>
+Only EV certificates are supported, OV and DV certificates are not supported.<br><br>
+
+OCSP Stapling<br><br>
+Unlike the OCSP method, where the client initiates a request to the OCSP server, <br>
+OCSP Stapling periodically queries the certificate status from the web server to the <br>
+OCSP server, obtains an OCSP response with a time stamp and signature, and caches it. <br>
+When a client initiates a connection request, the web server sends the response to <br>
+the client during the TLS handshake. Because of the existence of the signature, <br>
+the web server cannot be tampered with, so the client can know whether the certificate <br>
+has been revoked.
+
+OCSP Stapling transfers the query pressure of the client to itself, and the <br>
+information of the visited site will not be leaked to the OCSP server, so that the <br>
+privacy is protected. At the same time, the web server will cache the response, <br>
+thus reducing the pressure on the OCSP server.
+
+OCSP stapling transfers the query pressure of the client to itself, and the <br>
+information of the visit site will not be leaked to the OCSP server, so the privacy is <br>
+protected. At the same time, the web server will cache the response, thus <br>
+reducing the pressure on the OCSP server.<br><br>
+
+The problems with OCSP Stapling are:<br><br>
+
+Only one OCSP response can be sent at a time, and the certificate chain is <br>
+not supported (Note: Multiple Certificate Status Request Extension, <br>
+RFC 6961 solves this problem, and multiple responses can be sent at a time).
+
+Not all browsers support it.<br><br>
+
+</h3>
+<form action="/ocsp" method="post" enctype="multipart/form-data">
+	<div><h3>
+			OCSP Responder:
+		</h3>
+		<div>
+			OCSP_Message: <textarea id="ocsp" name="ocsp" cols="50" rows="10" style="margin: 0px; width: 522px; height: 111px;"><%= newenvVals.signedXml %></textarea> 
+		</div>
+	</div>
+	<input type="submit" />
+</form>
+<p><ul>
+  <li><a href="/login_client">Login with Client Id</a></li>
+  <li><a href="/register_client">Register A new client</a></li>
+  <li><a href="/client_secureEnv">create client secure envelop </a></li>
+  <li><a href="/logout">Logout</a></li>
+</ul></p>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--link rel="stylesheet" href="css/pha_styles002.css"  type="text/css"-->
+	<style type="text/css">
+		.container i {
+			color: lightblue;
+		    margin-left: -30px;
+		    cursor: pointer;
+		}
+		
+		h2, h3, h4 {
+			color: #2B547E;
+			font-family: Verdana;
+			font-size: 15px;
+		
+		
+		body {
+			background-color: #BCC6CC;
+		}
+	</style>
+</head>
+	<title> Client Login </title>
+	<script>
+		toggleEye = function(  ) {
+	  		const togglePassword = document.querySelector('#togglePassword');
+			const password = document.querySelector('#clientPw');
+			togglePassword.addEventListener('click', function (e) {
+		    // toggle the type attribute
+		    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+		    password.setAttribute('type', type);
+		    // toggle the eye slash icon
+		    this.classList.toggle('fa-eye-slash');
+			});
+		}
+		
+		 showTxt = function () {
+		  var x = document.querySelector('#login');
+		  if (x.style.display === "none") {
+		    x.style.display = "block";
+		  } else {
+		    x.style.display = "none";
+		  }
+  		}
+	</script>
+
+
+<body >
+	<button onClick="showTxt()">Login+</button><div id="login" name="login" >	
+		<h2> Domain Client Login </h2>
+		<h3>
+		After a client has successfully registered application navigates the<br>
+		new cient to this login page. The client must login first. After client<br>
+		has logged in successfully,  the application will create a p12 formatted<br>
+		test CA certificate and then the client is navigated to certificate download<br>
+		page where client has possibility to download the certificate.<br>
+		</h3>
+	</div>
+	<center>
+		<form style="max-width:250px;margin:auto" action="/login_client" method="POST">
+			<h3> Client Login </h3>
+			<div class="container">
+				<input type="text" name="clientId" id="clientId" required placeholder="Client Identifier">
+				<i class="fa fa-user icon"></i>
+			</div>
+			<div class="container">
+        		<input type="password" name="clientPw" id="clientPw" placeholder="Password">
+        		<i class="fa fa-eye icon" id="togglePassword" name="togglePassword" onClick="toggleEye()"></i>        		
+    		</div>
+ 			<button type="submit" class="btn btn-primary">Submit</button>
+			<div>
+				<ul>
+					<li><a href="/client_secureEnv">create client secure envelop </a></li>
+				    <li><a href="/client_start">Client-Process-Start</a></li>
+				    <li><a href="/register_user">SignUp</a></li>
+				</ul>
+			</div>
+		</form>
+	</center>
+</body>
+</html>
