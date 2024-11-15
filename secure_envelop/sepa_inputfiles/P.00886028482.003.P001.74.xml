@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03">
+<CstmrCdtTrfInitn>
+<GrpHdr>
+<MsgId>DBN6B1701101</MsgId>
+<CreDtTm>2017-01-10T14:38:20</CreDtTm>
+<NbOfTxs>1</NbOfTxs>
+<CtrlSum>120.00</CtrlSum>
+<InitgPty>
+<Nm>N6 - NORSK ROMSENTER</Nm>
+<Id>
+<OrgId>
+<Othr>
+<Id>00886028482</Id>
+<SchmeNm><Cd>CUST</Cd></SchmeNm>
+</Othr>
+<Othr>
+<Id>003</Id>
+<SchmeNm><Cd>BANK</Cd></SchmeNm>
+</Othr>
+</OrgId>
+</Id>
+</InitgPty>
+</GrpHdr>
+<PmtInf>
+<PmtInfId>AG_NOKEUR20170110_00017011010001</PmtInfId>
+<PmtMtd>TRF</PmtMtd>
+<BtchBookg>false</BtchBookg>
+<PmtTpInf>
+<SvcLvl>
+<Cd>NURG</Cd>
+</SvcLvl>
+<CtgyPurp>
+<Cd>SUPP</Cd>
+</CtgyPurp>
+</PmtTpInf>
+<ReqdExctnDt>2017-01-10</ReqdExctnDt>
+<Dbtr>
+<Nm>N6 - NORSK ROMSENTER</Nm>
+<PstlAdr><Ctry>NO</Ctry></PstlAdr>
+</Dbtr>
+<DbtrAcct>
+<Id>
+<Othr><Id>76940563506</Id><SchmeNm><Cd>BBAN</Cd></SchmeNm></Othr>
+</Id>
+<Ccy>NOK</Ccy>
+</DbtrAcct>
+<DbtrAgt>
+<FinInstnId>
+<BIC>DNBANOKK</BIC>
+</FinInstnId>
+</DbtrAgt>
+<ChrgBr>SHAR</ChrgBr>
+<CdtTrfTxInf>
+<PmtId>
+<InstrId>AN60170110100001</InstrId>
+<EndToEndId>AN60170110100001</EndToEndId>
+</PmtId>
+<Amt>
+<InstdAmt Ccy="EUR">120.00</InstdAmt>
+</Amt>
+<CdtrAgt>
+<FinInstnId>
+<BIC>KREDBEBB</BIC>
+<Nm>PLACC ROGIER 6</Nm>
+<PstlAdr><Ctry>BE</Ctry></PstlAdr>
+</FinInstnId>
+</CdtrAgt>
+<Cdtr>
+<Nm>GLOBAL INFORMATION INC.</Nm>
+<PstlAdr><StrtNm>EUROPEAN OFFICE</StrtNm><Ctry>BE</Ctry></PstlAdr>
+</Cdtr>
+<CdtrAcct>
+<Id>
+<IBAN>BE05734008047975</IBAN>
+</Id>
+</CdtrAcct>
+<RgltryRptg>
+<DbtCdtRptgInd>DEBT</DbtCdtRptgInd>
+<Dtls>
+<Cd>29</Cd>
+<Inf>ANNET KJØP/SALG AV T</Inf>
+</Dtls>
+</RgltryRptg>
+<RmtInf>
+<Ustrd>5,3.</Ustrd>
+</RmtInf>
+</CdtTrfTxInf>
+</PmtInf>
+</CstmrCdtTrfInitn>
+</Document>

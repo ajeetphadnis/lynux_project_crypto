@@ -1,0 +1,12 @@
+https://www.npmjs.com/package/xmldsigjs
+npm install xmldsigjs
+https://www.npmjs.com/package/xmldsigjs
+https://github.com/diafygi/webcrypto-examples#rsassa-pkcs1-v1_5---generatekey
+
+https://www.nordea.com/no/vare-tjenester/cashmanagement/oursolutions/corporateaccess/#tab=Documentation---Tools_Test-tools--example-files---schemas
+
+
+how the node values are used:
+nodeValue on an element will return null. However on a text node it will return the value. Since text is treated as a node you need to select another childnode. textContent gives you all the text inside the element.
+
+Different node-types. Text inside a node is treated as a text-node. That's why nodeValue on the element returned null. Table from MDN
