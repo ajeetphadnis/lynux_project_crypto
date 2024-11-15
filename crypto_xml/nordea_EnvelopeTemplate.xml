@@ -1,0 +1,12 @@
+<ApplicationRequest xmlns="http://bxd.fi/xmldata/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance/">
+	<CustomerId></CustomerId>
+	<Command>UploadFile</Command>
+	<Timestamp>2017-03-17T14:49:49.222+02:00</Timestamp>
+	<Environment>PRODUCTION</Environment>
+	<TargetId></TargetId>
+	<Encryption></Encryption>
+	<SoftwareId>TestClient</SoftwareId>
+	<FileType>NDCAPXMLI</FileType>
+	<Content></Content>
+</ApplicationRequest>
